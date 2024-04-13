@@ -1,0 +1,27 @@
+{
+    "bindings": [
+      {
+        "name": "message",
+        "type": "table",
+        "tableName": "snatapp",
+        "partitionKey": "1",
+        "connection": "TEST_BUCKET",
+        "direction": "out"
+      },
+      {
+        "authLevel": "anonymous",
+        "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
+        "methods": [
+          "get",
+          "post"
+        ]
+      },
+      {
+        "type": "http",
+        "direction": "out",
+        "name": "$return"
+      }
+    ]
+}
